@@ -12,8 +12,11 @@ const ExpenseChart = ({ transactions }) => {
     <div className={styles.chartContainer}>
       <h3 className={styles.chartTitle}>Expense Chart</h3>
       <Pie
-        data={getChartData(transactions, "expense")}
-        options={{ maintainAspectRatio: false }}
+        data={getChartData(transactions, "income")}
+        options={{
+          maintainAspectRatio: false,
+          responsive: true,
+        }}
       />
     </div>
   );
