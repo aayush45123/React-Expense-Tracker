@@ -17,7 +17,17 @@ A responsive and user-friendly expense tracker built with **React** and **Chart.
 
 ## 📸 Screenshots
 
-> _Add your app screenshots here (optional)_
+**Output**  
+![Output](./image1.png)
+
+**Output**  
+![Output](./image2.png)
+
+**Output**  
+![Output](./image3.png)
+
+**Output**  
+![Output](./image4.png)
 
 ---
 
