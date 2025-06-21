@@ -13,7 +13,10 @@ const IncomeChart = ({ transactions }) => {
       <h3 className={styles.chartTitle}>Income Chart</h3>
       <Pie
         data={getChartData(transactions, "income")}
-        options={{ maintainAspectRatio: false }}
+        options={{
+          maintainAspectRatio: false,
+          responsive: true,
+        }}
       />
     </div>
   );
