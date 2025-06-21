@@ -1,0 +1,121 @@
+/* IncomeChart.module.css - Simple & Clean Design with Fixed Height */
+
+.chartContainer {
+  background: #ddcccc7c;
+  border: 1px solid #d1fae5;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);
+  width: 100%;
+  max-width: 400px;
+  height: 400px; /* Fixed height - will never change */
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.chartContainer:hover {
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.15);
+}
+
+.chartTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #bff3e4;
+  margin-bottom: 20px;
+  text-align: center;
+  flex-shrink: 0; /* Prevent title from shrinking */
+}
+
+.chartWrapper {
+  width: 100%;
+  flex: 1; /* Takes remaining space after title */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0; /* Allow flex item to shrink below content size */
+}
+
+.chartWrapper canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Loading state */
+.chartContainer.loading {
+  align-items: center;
+  justify-content: center;
+  color: #bff3e4;
+  font-size: 1rem;
+}
+
+/* Empty state */
+.chartContainer.empty {
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  text-align: center;
+  border: 2px dashed #a7f3d0;
+  background: #f0fdf4;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.emptyText {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+}
+
+/* Positive income indicator */
+.chartContainer.positive {
+  border-color: #10b981;
+  background: linear-gradient(to bottom, #ffffff, #f0fdf4);
+}
+
+.chartContainer.positive:hover {
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2);
+}
+
+/* Responsive design with FIXED heights */
+@media (max-width: 768px) {
+  .chartContainer {
+    padding: 20px;
+    max-width: 100%;
+    height: 350px; /* Fixed height for tablets */
+  }
+
+  .chartTitle {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chartContainer {
+    padding: 16px;
+    height: 320px; /* Fixed height for phones */
+  }
+
+  .chartTitle {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+}
+
+/* Prevent any animations that might cause height changes */
+* {
+  box-sizing: border-box;
+}
+
+/* Disable any potential height animations */
+.chartContainer,
+.chartContainer *,
+.chartContainer::before,
+.chartContainer::after {
+  animation: none !important;
+  transition-property: box-shadow, border-color !important;
+}
