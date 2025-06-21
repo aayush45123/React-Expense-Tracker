@@ -54,8 +54,7 @@ src/
 │       └── ExpenseChart.jsx
 ├── utils/
 │   └── chartHelpers.js
-├── styles/
-│   └── (module CSS files)
+
 ```
 
 ---
