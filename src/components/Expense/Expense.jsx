@@ -43,11 +43,9 @@ const Expense = ({ transactions, setTransactions }) => {
   }, [setTransactions]);
 
   const totalBalance = transactions.reduce((account, current) => {
-    return current.type === "income"
-      ? account + parseFloat(current.amount)
-      : account - parseFloat(current.amount);
+    const amount = parseFloat(current.amount) || 0;
+    return current.type === "income" ? account + amount : account - amount;
   }, 0);
-
   return (
     <div className="expenseContainer">
       <div className="header">
